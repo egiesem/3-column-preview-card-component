@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+//font-family: 'Lexend Deca', sans-serif;
+//font-family: 'Big Shoulders Display', cursive;
+
+$bright_orange : hsl(31, 77%, 52%);
+$dark_cyan : hsl(184, 100%, 22%);
+$very_dark_cyan : hsl(179, 100%, 13%);
+$trans_white: hsla(0, 0%, 100%, 0.75);
+$light_gray: hsl(0, 0%, 95%);
+
+$mobile: 375px;
+$desktop: 1440px;
+$xtra: 988px;
+$premob: 776px;
+
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    
+    .flex-wrapper {
+        display: flex;
+        max-width: $desktop;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 20px);
+
+        @media(max-width: #{$premob}) {
+            height: auto;
+            flex-direction: column;
+         }
+
+        .wrapper {
+            height: 50%;
+            max-height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding: 4%;
+
+            @media(max-width: #{$premob}) {
+                padding: 12% 15%;
+            }
+
+
+            &.bg1 {
+                background-color: $bright_orange;
+                border-radius: 5px 0 0 5px;
+
+                @media(max-width: #{$premob}) {
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+            &.bg2 {
+                background-color: $dark_cyan;
+            }
+            &.bg3 {
+                background-color: $very_dark_cyan;
+                border-radius: 0 5px 5px 0;
+
+                @media(max-width: #{$premob}) {
+                    border-radius: 0 0 5px 5px ;
+                }
+            }
+
+            .title {
+                font-family: 'Big Shoulders Display', cursive;
+                text-transform: uppercase;
+                color: $light_gray;
+                font-size: 3rem;
+                margin: 2rem 0 1rem 0;
+
+                @media(max-width: #{$premob}) {
+                    font-size: 2.3rem;
+                    margin: 1.5rem 0 .5rem 0;
+                }
+
+            }
+            >p {
+                color: $trans_white;
+                font-size: 1.1rem;
+                line-height: 1.7rem;
+                margin-bottom: auto;
+                max-width: 90%;
+
+                @media(max-width: #{$premob}) {
+                    font-size: 1rem;
+                    line-height: 1.6rem;
+                    max-width: 85%;
+                    margin-bottom: 1.3rem;
+                }
+
+            }
+            .btn {
+                background-color: white;
+                border: none;
+                padding: 5%;
+                border-radius: 90px;
+                font-family: 'Lexend Deca', sans-serif;
+                min-width: 50%;
+                font-size: 1rem;
+
+                &.c1 {
+                    color: $bright_orange;
+                }
+                &.c2 {
+                    color: $dark_cyan;
+                }
+                &.c3 {
+                    color: $very_dark_cyan;
+                }
+
+                @media(max-width: #{$xtra}) {
+                   font-size: .9rem;
+                   padding: 15px;
+                   min-width: 150px;
+                }
+
+                @media(max-width: #{$premob}) {
+                    padding: 15px;
+                    min-width: 150px;
+                }
+
+                
+            }
+        }
+    }
+    .attribution {
+        text-align: center;
+    }
+}
